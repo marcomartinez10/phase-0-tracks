@@ -35,3 +35,8 @@ img {
 a:visited {
 	color: white;
 }
+@media screen and (max-width: 500px) {
+ p {
+ color: white;
+ }
+}
