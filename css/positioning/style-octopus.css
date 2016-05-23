@@ -1,0 +1,28 @@
+#dress-up {
+  position: relative;
+}
+
+.octopus {
+  display: block;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.glasses {
+  position: absolute;
+  display: block;
+  top: 266px;
+  z-index: 1;
+  left: 45%;
+  
+}
+
+.hat {
+  position: relative;
+  display: block;
+  left: 40%;
+  top: 80px;
+  z-index: 2;
+  
+  
+}
