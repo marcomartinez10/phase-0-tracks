@@ -1,0 +1,37 @@
+body {
+
+	background-color: orange;
+	margin-left: 700px;
+}
+
+table {
+
+	border: 15px;
+	padding: 10px;
+	border-color: black;
+}
+
+a{
+	text-align: center;
+}
+h1{
+	text-align: center;
+}
+img {
+	display: center;
+	position: middle;
+}
+
+.header {
+	color: white;
+
+}
+
+#goals {
+	color: red;
+	font-weight: bold;
+}
+
+a:visited {
+	color: white;
+}
