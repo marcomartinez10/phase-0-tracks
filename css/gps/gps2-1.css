@@ -1,0 +1,22 @@
+header {
+  background-color: red;
+  
+}
+.column-1 {
+  background-color: blue;
+  float: left;
+  width: 50%;
+}
+.column-2 {
+  background-color: orange;
+  float: left;
+  width: 50%;
+  
+}
+
+
+
+footer {
+  background-color: green;
+  clear: both;
+}
