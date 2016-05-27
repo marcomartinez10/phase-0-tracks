@@ -1,0 +1,11 @@
+1- Enter the elevator
+2- Search for the buttons with numbers.
+3- Press the button that has the number of the floor you want to go to.
+
+TURN ON THE CAR
+
+1- Go to the car
+2- Open the car
+3- Open the car
+4- Put the car keys in the hole next to the steering wheel
+5- twist the keys to the right
