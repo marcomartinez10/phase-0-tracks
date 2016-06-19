@@ -2,6 +2,8 @@
 #this data is updated every year with estimates from a 10 year census
 
 
+
+
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},
@@ -55,3 +57,31 @@ STATE_DATA = {
   "Wisconsin" => {population_density: 105.2, population: 5726398},
   "Wyoming" => {population_density: 5.851, population: 576412}
 }
+
+# Status API Training Shop Blog About
+# Release 1
+#/app
+  # - file.rb # <- data
+  # /folder 
+  #   - ruby.rb # <- here
+# release 2
+# require_relative '../../../file'
+
+# require './file'
+# require 'faker'
+# Release 3
+
+# State_Data is a hashy hash because it is a giant hash of several little hashes
+
+
+
+# Virus Predictor
+
+# I worked on this challenge [by myself, with: ].
+# We spent [#] hours on this challenge.
+
+# EXPLANATION OF require_relative
+#
+#
+# require_relative 'state_data'
+
