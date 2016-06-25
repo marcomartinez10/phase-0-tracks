@@ -1,0 +1,90 @@
+sqlite> SELECT * FROM animals;
+1|eagle|true|15|1
+2|pelican|false|20|1
+3|shark|false|27|2
+4|panda|true|15|3
+
+sqlite> UPDATE animals SET endangered="false" WHERE name="eagle";
+sqlite> SELECT * FROM animals;
+1|eagle|false|15|1
+2|pelican|false|20|1
+3|shark|false|27|2
+4|panda|true|15|3
+
+SELECT * FROM animals, species WHERE animals.species_id = species.id;
+1|eagle|false|15|1|1|bird
+2|pelican|false|20|1|1|bird
+3|shark|false|27|2|2|fish
+4|panda|true|15|3|3|mammal
+
+sqlite> SELECT animals.name, species.specie FROM animals JOIN species ON animals.species_id = species.id;
+eagle|bird
+pelican|bird
+shark|fish
+panda|mammal
+
+sqlite> DELETE FROM animals WHERE name="eagle";
+sqlite> SELECT * FROM animals
+   ...> ;
+2|pelican|false|20|1
+3|shark|false|27|2
+4|panda|true|15|3
+
+TYPES OF JOINS
+
+INNER JOIN
+
+Inner join produces only the set of records that match in both animals and species.
+
+SELECT * FROM animals INNER JOIN species ON animals.species_id = species.id;
+2|pelican|false|20|1|1|bird
+3|shark|false|27|2|2|fish
+4|panda|true|15|3|3|mammal
+
+FULL OUTER JOIN
+
+Full outer join produces the set of all records in animals and species, with matching records from both sides where available. If there is no match, the missing side will contain null.
+
+SELECT * FROM animals FULL OUTER JOIN animals ON animals.name = species.especie;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+LEFT OUTER JOIN
+
+Left outer join produces a complete set of records from animals, with the matching records (where available) in species. If there is no match, the right side will contain null.
+
+SELECT * FROM animals LEFT OUTER JOIN species ON animals.name = species.specie;
+2|pelican|false|20|1||
+3|shark|false|27|2||
+4|panda|true|15|3||
+
+LEFT OUTER JOIN WITH CONDITIONAL
+
+To produce the set of records only in animals, but not in species, we perform the same left outer join, then exclude the records we don't want from the right side via a where clause.
+
+SELECT * FROM animals
+   ...> LEFT OUTER JOIN species
+   ...> ON animals.species_id = species.specie
+   ...> WHERE animals.lifespan >= 20;
+2|pelican|false|20|1||
+3|shark|false|27|2||
+
+CROSS JOIN
+
+This joins "everything to everything"
+
+sqlite> SELECT * FROM animals CROSS JOIN species;
+2|pelican|false|20|1|1|bird
+2|pelican|false|20|1|2|fish
+2|pelican|false|20|1|3|mammal
+3|shark|false|27|2|1|bird
+3|shark|false|27|2|2|fish
+3|shark|false|27|2|3|mammal
+4|panda|true|15|3|1|bird
+4|panda|true|15|3|2|fish
+4|panda|true|15|3|3|mammal
+
+BOOKMARK OF DIAGRAMS
+
+https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
+
+
