@@ -31,17 +31,40 @@ end
 create_player(db, name, field)
 
 puts "THESE ARE THE PLAYERS FOR THE MATCH:"
-match = db.execute("SELECT players.name
-	 FROM players JOIN fields ON fields.id='#{field}'")
+if (field==1)
+match = db.execute("SELECT players.name, fields.name
+# 	 FROM players JOIN fields ON fields.id=1")
+end
 puts match
 puts "GOOD LUCK! HAVE FUN! KEEP USING SOCCER APP!"
 puts "DESIGNED BY MARCO MARTINEZ TRAINED AT DEVBOOTCAMP"
 
 
-def update_slots(db, field)
+ def update_slots(db, field)
 	db.execute("UPDATE slots_available SET quantity = (SELECT quantity FROM slots_available 
 				WHERE id='#{field}') -1 WHERE id='#{field}'")
 end 
+
+
+
+
+
+
+
+
+
+
+# match = db.execute("SELECT players.name, fields.name
+# 	 FROM players JOIN fields ON fields.id='#{field}'")
+# puts match
+# puts "GOOD LUCK! HAVE FUN! KEEP USING SOCCER APP!"
+# puts "DESIGNED BY MARCO MARTINEZ TRAINED AT DEVBOOTCAMP"
+
+
+# def update_slots(db, field)
+# 	db.execute("UPDATE slots_available SET quantity = (SELECT quantity FROM slots_available 
+# 				WHERE id='#{field}') -1 WHERE id='#{field}'")
+# end 
 
 # def reset_slots (db, field)
 
@@ -50,19 +73,48 @@ end
 
 # def delete_players(db, field)
 
-# 	db.execute("DELETE FROM players WHERE players.fields_id=#'{field}'")
+# db.execute("DELETE FROM players WHERE players.fields_id=#'{field}'")
 
 # end
 
 update_slots(db, field)
 
-# slots_available = db.execute("SELECT quantity FROM slots_available WHERE id=#'{field}'") 
+slots_available = db.execute("SELECT quantity FROM slots_available WHERE id=1") 
 
-# if (slots_available[0][0]==0)
+if (slots_available[0][0]==0)
 	
+	
+    db.execute("UPDATE slots_available SET quantity = 10 WHERE id=1")
+    db.execute("DELETE FROM players WHERE players.fields_id=1")
+
+	
+end
+
+slots_available = db.execute("SELECT quantity FROM slots_available WHERE id=2") 
+
+if (slots_available[0][0]==0)
+	
+	db.execute("UPDATE slots_available SET quantity = 10 WHERE id=2")
+	 db.execute("DELETE FROM players WHERE players.fields_id=2")
+    
+end
+
+slots_available = db.execute("SELECT quantity FROM slots_available WHERE id=3") 
+
+if (slots_available[0][0]==0)
+	
+	db.execute("UPDATE slots_available SET quantity = 10 WHERE id=3")
+    
+    db.execute("DELETE FROM players WHERE players.fields_id=3")
+end
+
+
+
+
+
+# if (slots_available[0][0]==0)	
 # 	reset_slots(db, field)
 # 	# delete_players(db, field)
-	
 # end
 
 
