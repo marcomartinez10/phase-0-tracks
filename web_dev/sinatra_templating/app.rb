@@ -25,3 +25,8 @@ post '/students' do
 end
 
 # add static resources
+
+get '/teachers' do
+	@directors = db.execute("SELECT * FROM students")
+	erb :teachers
+end

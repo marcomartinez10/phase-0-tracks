@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> TEACHERS </title>
+</head>
+<body>
+
+<ul>
+	<% @directors.each do |teacher| %>
+<li><%= teacher['name'] %>, <%= teacher['age'] %></li>
+<% end %>
+</ul>
+
+</body>
+</html>
