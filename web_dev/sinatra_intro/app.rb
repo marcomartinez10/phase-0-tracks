@@ -44,3 +44,21 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+get '/contact' do
+"Santa Rosa De Lima, Calle A, Edificio Altozano II"
+  end 
+
+get '/great_job' do
+  person = params[:person]
+  if person
+     "Good job, #{person}"
+  else
+    "Good job!"
+end
+
+
+get '/calculator/:int1/:int2' do
+  sum = params[:int1].to_i + params[:int2].to_i
+  "#{sum}"
+end
